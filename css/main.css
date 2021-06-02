@@ -1,0 +1,810 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+   html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+  }
+  
+  
+  /*
+   * Remove text-shadow in selection highlight:
+   * https://twitter.com/miketaylr/status/12228805301
+   *
+   * Vendor-prefixed and regular ::selection selectors cannot be combined:
+   * https://stackoverflow.com/a/16982510/7133471
+   *
+   * Customize the background color to match your design.
+   */
+  
+  ::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+  }
+  
+  ::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+  }
+  
+  
+  /*
+   * A better looking default horizontal rule
+   */
+  
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+  }
+  
+  
+  /*
+   * Remove the gap between audio, canvas, iframes,
+   * images, videos and the bottom of their containers:
+   * https://github.com/h5bp/html5-boilerplate/issues/440
+   */
+  
+  audio,
+  canvas,
+  iframe,
+  img,
+  svg,
+  video {
+    vertical-align: middle;
+  }
+  
+  
+  /*
+   * Remove default fieldset styles.
+   */
+  
+  fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  /*
+   * Allow only vertical resizing of textareas.
+   */
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  
+  /* ==========================================================================
+     Author's custom styles
+     ========================================================================== */
+  
+  
+  /* ==========================================================================
+     Helper classes
+     ========================================================================== */
+  
+  
+  /*
+   * Hide visually and from screen readers
+   */
+  
+  .hidden,
+  [hidden] {
+    display: none !important;
+  }
+  
+  
+  /*
+   * Hide only visually, but have it available for screen readers:
+   * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+   *
+   * 1. For long content, line feeds are not interpreted as spaces and small width
+   *    causes content to wrap 1 word per line:
+   *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+   */
+  
+  .sr-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+    /* 1 */
+  }
+  
+  
+  /*
+   * Extends the .sr-only class to allow the element
+   * to be focusable when navigated to via the keyboard:
+   * https://www.drupal.org/node/897638
+   */
+  
+  .sr-only.focusable:active,
+  .sr-only.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    white-space: inherit;
+    width: auto;
+  }
+  
+  
+  /*
+   * Hide visually and from screen readers, but maintain layout
+   */
+  
+  .invisible {
+    visibility: hidden;
+  }
+  
+  
+  /*
+   * Clearfix: contain floats
+   *
+   * For modern browsers
+   * 1. The space content is one way to avoid an Opera bug when the
+   *    `contenteditable` attribute is included anywhere else in the document.
+   *    Otherwise it causes space to appear at the top and bottom of elements
+   *    that receive the `clearfix` class.
+   * 2. The use of `table` rather than `block` is only necessary if using
+   *    `:before` to contain the top-margins of child elements.
+   */
+  
+  .clearfix::before,
+  .clearfix::after {
+    content: " ";
+    display: table;
+  }
+  
+  .clearfix::after {
+    clear: both;
+  }
+  
+  
+  /* ==========================================================================
+     EXAMPLE Media Queries for Responsive Design.
+     These examples override the primary ('mobile first') styles.
+     Modify as content requires.
+     ========================================================================== */
+  
+  @media only screen and (min-width: 35em) {
+    /* Style adjustments for viewports that meet the condition */
+  }
+  
+  @media print,
+  (-webkit-min-device-pixel-ratio: 1.25),
+  (min-resolution: 1.25dppx),
+  (min-resolution: 120dpi) {
+    /* Style adjustments for high resolution devices */
+  }
+  
+  
+  /* ==========================================================================
+     Print styles.
+     Inlined to avoid the additional HTTP request:
+     https://www.phpied.com/delay-loading-your-print-css/
+     ========================================================================== */
+  
+  @media print {
+    *,
+    *::before,
+    *::after {
+      background: #fff !important;
+      color: #000 !important;
+      /* Black prints faster */
+      box-shadow: none !important;
+      text-shadow: none !important;
+    }
+    a,
+    a:visited {
+      text-decoration: underline;
+    }
+    a[href]::after {
+      content: " (" attr(href) ")";
+    }
+    abbr[title]::after {
+      content: " (" attr(title) ")";
+    }
+    /*
+     * Don't show links that are fragment identifiers,
+     * or use the `javascript:` pseudo protocol
+     */
+    a[href^="#"]::after,
+    a[href^="javascript:"]::after {
+      content: "";
+    }
+    pre {
+      white-space: pre-wrap !important;
+    }
+    pre,
+    blockquote {
+      border: 1px solid #999;
+      page-break-inside: avoid;
+    }
+    /*
+     * Printing Tables:
+     * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+     */
+    thead {
+      display: table-header-group;
+    }
+    tr,
+    img {
+      page-break-inside: avoid;
+    }
+    p,
+    h2,
+    h3 {
+      orphans: 3;
+      widows: 3;
+    }
+    h2,
+    h3 {
+      page-break-after: avoid;
+    }
+  }
+  
+  .col-sm-4 {
+    -moz-hyphens: auto;
+    -ms-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    word-wrap: break-word;
+  }
+  
+  #body {
+    font-family: sans-serif;
+    background-color: #1F1F1F;
+    height: 100%;
+  }
+  
+  #left {
+    background-color: var(--sidebarcolor);
+    width: 15%;
+    position: relative;
+  }
+  
+  #middle {
+    background-color: var(--backgroundcolor);
+    width: 42.5%;
+  }
+  
+  #right {
+    background-color: var(--backgroundcolor);
+    width: 42.5%;
+    min-height: 100vh
+  }
+  
+  @media (max-width: 767px) {
+    #left {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    #middle {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 767px) {
+    #right {
+      width: 100%;
+    }
+  }
+  
+  .container {
+    min-height: calc(100% - 110px) !important;
+    margin: 0 auto -33px;
+    width: 100%;
+  }
+  
+  .scroll {
+    height: calc(100vh - 110px);
+    overflow-y: scroll;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer 10+ */
+  }
+  
+  .scroll::-webkit-scrollbar {
+    /* WebKit */
+    width: 0;
+    height: 0;
+  }
+  
+  @media (max-width: 767px) {
+    .scroll {
+      height: 100%;
+    }
+  }
+  
+  
+  /*
+     * ########################
+     Passionate graphic designer & developer, worked for over 10 years as a freelancer 
+     into the design industry while studying. Took a High Professional Technical Course 
+     in App development and currently finishing my Degree in Computer Science.
+     ############################
+     */
+  
+  .sidebar-profile-pic {
+    width: 100%;
+    min-width: 100%;
+    padding: 20px;
+    border-radius: 50%;
+  }
+  
+  @media (max-width: 767px) {
+    .sidebar-profile-pic {
+      width: 100%;
+      min-width: 100%;
+      padding: 50px;
+      border-radius: 50%;
+    }
+  }
+  
+  .sidebar-profile-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--textcolor);
+  }
+  
+  .sidebar-profile-description {
+    font-size: 15px;
+    color: white;
+  }
+  
+  .sidebar-profile-location {
+    font-size: 14px;
+    color: var(--textcolor2);
+  }
+  
+  .sidebar-profile-social {
+    font-size: 25px;
+    width: 100%;
+    margin: 10px auto;
+    height: 30px;
+    color: white;
+  }
+  
+  @media (max-width: 767px) {
+    .sidebar-profile-social {
+      margin-bottom: 50px;
+    }
+  }
+  
+  #languages {
+    padding-top: 20px;
+  }
+  
+  .sidebar-languages-title {
+    font-size: 20px;
+    font-weight: 200;
+    color: var(--textcolor);
+  }
+  
+  .sidebar-languages {
+    display: inline-block;
+  }
+  
+  .language-1 {
+    color: var(--textcolor);
+  }
+  
+  .language-2 {
+    color: var(--textcolor);
+  }
+  
+  .language-3 {
+    color: var(--textcolor);
+  }
+  
+  .white {
+    color: var(--textcolor);
+  }
+  
+  #about {
+    padding: 30px 30px 0 30px;
+  }
+  
+  .about-description {
+    padding-top: 20px;
+    font-size: 14px;
+    color: var(--textcolor);
+  }
+  
+  #hobbies {
+    padding: 30px;
+  }
+  
+  .btn-circle-xl {
+    width: 70px;
+    height: 70px;
+    border-radius: 25px;
+    font-size: 24px;
+    background-color: var(--buttoncolor) !important;
+  }
+  
+  #interests {
+    padding: 30px;
+  }
+  
+  .tag {
+    background-color: var(--interesttagcolor);
+    padding: 5px 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    color: white;
+    line-height: 2.2em;
+  }
+  
+  .tag:hover {
+    filter: brightness(95%);
+    transition: all .1s ease;
+  }
+  
+  .tag::after {
+    content: ' \00d7';
+  }
+  
+  .tag:hover::after {
+    color: white;
+  }
+  
+  #skills {
+    padding: 30px 30px 0 30px;
+  }
+  
+  .section-mini-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: var(--titlecolor);
+  }
+  
+  .section-title {
+    font-size: 60px;
+    color: var(--sectiontitle);
+  }
+  
+  .paddingtop-20 {
+    padding-top: 20px;
+  }
+  
+  .paddingbottom20 {
+    padding-bottom: 20px;
+  }
+  
+  .paddingleft-5 {
+    padding-left: 5px;
+  }
+  
+  .minheight100vh {
+    min-height: 100vh;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .right {
+    text-align: right;
+  }
+  
+  .project {
+    padding-bottom: 10px;
+  }
+  
+  .work-process {
+    max-width: 100%;
+  }
+  
+  .work-process h3 {
+    margin: 0px 0px 10px;
+    max-width: 500px;
+  }
+  
+  .project-bar {
+    height: 15px;
+    background: var(--progressbarbgcolor);
+  }
+  
+  .project-percent {
+    height: 15px;
+    background-color: #dcc3b3;
+    position: relative;
+    width: 0;
+    transition: 2s linear;
+  }
+  
+  .project-percent::before {
+    content: attr(percent);
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    padding: 1px 0px;
+    color: #ffffff;
+    font-size: 0px;
+    font-weight: bold;
+    width: 20px;
+    margin: 0px auto;
+  }
+  
+  .project-title {
+    font-size: 15px;
+    font-weight: 400;
+    color: var(--textcolor);
+  }
+  
+  .timeline-date {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--textcolor2);
+  }
+  
+  @media (max-width: 767px) {
+    .timeline-date {
+      font-size: 11px;
+    }
+  }
+  
+  .timeline-icon {
+    font-size: 1vw;
+    color: #ebebeb;
+  }
+  
+  @media (max-width: 767px) {
+    .timeline-icon {
+      font-size: 4vw;
+    }
+  }
+  
+  .timeline-title {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 0;
+    color: var(--timelinetitle);
+  }
+  
+  .timeline-subtitle {
+    font-size: 16px;
+    padding-top: 5px;
+    font-weight: 400;
+    color: var(--textcolor);
+  }
+  
+  .timeline-description {
+    font-size: 14px;
+    color: var(--textcolor2);
+  }
+  
+  #education {
+    padding: 30px 30px 0 30px;
+  }
+  
+  #work {
+    padding: 30px 30px 0 30px;
+  }
+  
+  #contact {
+    padding-top: 30px;
+  }
+  
+  .contact-icons {
+    padding-right: 5px;
+    color: var(--contacticonscolor);
+  }
+  
+  @media (max-width: 767px) {
+    .sidebar-profile-contact {
+      padding-bottom: 50px;
+    }
+  }
+  
+  .sidebar-contact-title {
+    font-size: 20px;
+    font-weight: 200;
+    color: var(--textcolor);
+  }
+  
+  .sidebar-contacts {
+    display: inline-block;
+  }
+  
+  .sidebar-info {
+    font-size: 13px;
+    color: white;
+  }
+  
+  .contact-center {
+    line-height: 1.5;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  
+  #credits {
+    font-size: 12px;
+    text-align: center;
+    color: var(--textcolor2);
+  }
+  
+  .timeline-circle {
+    margin-top: 4px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: var(--timelinecirclecolor);
+  }
+  
+  .timeline-line {
+    border-left: 1px solid #ebebeb;
+    height: 100%;
+    margin-left: 6px;
+  }
+
+  #contact {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  
+  .contact-info {
+    width: 80%;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--sidebarcolor);
+    position: absolute;
+    bottom: 2%;
+    left: 10%;
+  }
+  
+  .contact-1 {
+    text-align: left;
+    color: var(--contacticonscolor);
+  }
+  
+  a:hover {
+    color: grey !important;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .social-icon {
+    color: var(--socialcolor);
+  }
+  
+  .iconcolor {
+    color: var(--iconcolor);
+  }
+  
+  :root {
+    --backgroundcolor: white;
+    --sidebarcolor: #dcc3b3;
+    --buttoncolor: #dcc3b3;
+    --iconcolor: white;
+    --titlecolor: grey;
+    --timelinetitle: black;
+    --sectiontitle: black;
+    --textcolor: grey;
+    --textcolor2: #9d9d9d;
+    --socialcolor: white;
+    --contacticonscolor: white;
+    --progressbarbgcolor: #ebebeb;
+    --interesttagcolor: black;
+    --timelinecirclecolor: #dcc3b3;
+  }
+  
+  .tooltip.show {
+    opacity: 1;
+  }
+  
+  .tooltip-inner {
+    background: #fff;
+    color: #000;
+    padding: .5em 1em;
+    border: 1px solid #bbb;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, .15);
+  }
+  
+  .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow,
+  .tooltip.bs-tooltip-bottom .arrow {
+    position: relative;
+    background: #fff;
+    top: 1px;
+    width: 16px;
+  }
+  
+  .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+  .tooltip.bs-tooltip-bottom .arrow::before,
+  .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::after,
+  .tooltip.bs-tooltip-bottom .arrow::after {
+    bottom: 0;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  
+  .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::after,
+  .tooltip.bs-tooltip-bottom .arrow::after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #fff;
+    border-width: 8px;
+    margin-left: -8px;
+  }
+  
+  .tooltip.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+  .tooltip.bs-tooltip-bottom .arrow::before {
+    border-color: rgba(187, 187, 187, 0);
+    border-bottom-color: #bbb;
+    border-width: 9px;
+    margin-left: -9px;
+  }
+  
+  .miguel {
+    color: white;
+    font-size: 5vw;
+    margin: 0;
+    padding-top: 35px;
+    line-height: 0.50;
+    font-family: 'Bebas Neue', cursive;
+  }
+  
+  @media (max-width: 767px) {
+    .miguel {
+      font-size: 25vw;
+    }
+  }
+  
+  .soares {
+    color: white;
+    font-size: 5vw;
+    margin: 0;
+    font-family: 'Bebas Neue', cursive;
+  }
+  
+  @media (max-width: 767px) {
+    .soares {
+      font-size: 25vw;
+    }
+  }
+  
+  .new-title {
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .section-title-academic {
+    font-size: 30px;
+  }
